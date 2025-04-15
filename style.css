@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Keania+One&family=Poppins:wght@600&family=Special+Gothic+Expanded+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+:root {
+  --ff-logo: "Special Gothic Expanded One", sans-serif;
+  --ff-body: "Roboto", sans-serif;
+  --ff-hero-heading: "Lilita One", sans-serif;
+
+  --color-primary: #a1003e;
+}
+
 *,
 *::before,
 *::after {
@@ -11,6 +23,12 @@
 
 a {
   text-decoration: none;
+  color: white;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
 }
 
 li {
@@ -25,7 +43,117 @@ h5 {
   line-height: 1;
 }
 
+html {
+  font-family: "Roboto", sans-serif;
+}
+
 body {
   min-height: 100vh;
   line-height: 1.5;
+  font-family: var(--ff-body);
+  background: var(--color-primary);
+}
+
+section {
+  height: 100vh;
+}
+
+/*----------HERO SECTION****************/
+.hero__section header {
+  width: 100%;
+  height: 100px;
+  padding: 0.5rem 2rem;
+}
+
+.hero__section nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.hero__section nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+}
+
+.hero__section nav .logo img {
+  width: 30px;
+  height: 30px;
+}
+
+.hero__section .nav__links {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero__section .nav__links li {
+  font-size: 0.8rem;
+}
+
+.hero__section .btn {
+  border-radius: 100vmin;
+  border: 0;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.btn.signup__button {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn.login__button {
+  background: white;
+  color: var(--color-primary);
+  margin-left: 1rem;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--ff-hero-heading);
+  color: white;
+  font-size: 8rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.row span {
+  color: #ffc4c4;
+}
+
+.building__image {
+  width: 300px;
+  height: 80px;
+  background-image: url(assets/images/building.jpg);
+  background-position: center;
+  background-size: center;
+  border-radius: 150px;
+}
+
+.second__row img {
+  width: 140px;
+  height: 100%;
+}
+
+@media (max-width: 50em) {
+  .hero__section .nav__links {
+    display: none;
+  }
 }
