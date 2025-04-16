@@ -8,6 +8,7 @@
   --ff-hero-heading: "Lilita One", sans-serif;
 
   --color-primary: #a1003e;
+  --color-neutral: #f1b5ca;
 }
 
 *,
@@ -29,6 +30,7 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+  border-style: solid;
 }
 
 li {
@@ -45,6 +47,7 @@ h5 {
 
 html {
   font-family: "Roboto", sans-serif;
+  height: 2000px;
 }
 
 body {
@@ -61,7 +64,7 @@ section {
 /*----------HERO SECTION****************/
 .hero__section header {
   width: 100%;
-  height: 100px;
+  height: 120px;
   padding: 0.5rem 2rem;
 }
 
@@ -118,6 +121,7 @@ section {
 }
 
 .hero__container {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,11 +129,14 @@ section {
   color: white;
   font-size: 8rem;
   max-width: 1200px;
+  padding: 0 2rem;
   margin-inline: auto;
+  line-height: 1;
 }
 
 .row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 }
@@ -159,18 +166,175 @@ section {
   border-radius: 100%;
 }
 
-@media (max-width: 60em) {
+.fourth__row {
+  display: flex;
+  gap: 6rem;
+  margin-top: 2rem;
+  flex-wrap: wrap-reverse;
+}
+
+.fourth__row button {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 2rem;
+  gap: 1rem;
+  border-radius: 100vmin;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.fourth__row button span img {
+  width: 3vw;
+}
+
+.fourth__row button span {
+  display: flex;
+  border-radius: 50%;
+  padding: 0.3rem;
+  background: var(--color-primary);
+}
+
+.fourth__row p {
+  font-family: "Roboto", sans-serif;
+  font-size: 400;
+  font-size: 1rem;
+  max-width: 700px;
+  color: var(--color-neutral);
+  line-height: 1.5;
+}
+
+/*----------SCROLLING CONTAINER****************/
+.scroll__container {
+  --gap: 20px;
+  position: absolute;
+  display: flex;
+  gap: var(--gap);
+  bottom: 2rem;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+  padding-block: 1rem;
+  background: transparent;
+}
+
+.scroll__container:hover {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+.scroll__track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+  user-select: none;
+  gap: var(--gap);
+  animation: scroll-left 20s linear infinite;
+}
+
+.scroll__content {
+  display: flex;
+  gap: 3rem;
+}
+
+.scroll__content span {
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.menu {
+  display: none;
+  cursor: pointer;
+}
+
+.menu img {
+  width: 40px;
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+@media (max-width: 1540px) {
+  .row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1040px) {
+  .hero__container {
+    font-size: 5rem;
+  }
+  /**HERO CONTAINER**/
+  .fourth__row {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .fourth__row button {
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    margin-inline: auto;
+  }
+
+  .fourth__row p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
   .hero__section .nav__links {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    inset: 0 0 0 60%;
+    display: flex;
+    padding: min(30vh, 10rem) 2rem;
+    background-color: hsla(0, 6%, 15%, 0.2);
+    backdrop-filter: blur(0.2em);
+    transform: translateX(100%);
+    transition: transform 400ms ease-in;
+  }
+
+  .hero__section .auth__buttons {
     display: none;
   }
 
   .hero__container {
-    font-size: 6rem;
+    font-size: 3rem;
+  }
+
+  /**HERO CONTAINER**/
+  .fourth__row {
+    margin-top: 0.7rem;
+    gap: 2rem;
+  }
+
+  /**MENU**/
+  .menu {
+    display: block;
+    position: absolute;
+    z-index: 999;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .nav__links.active {
+    transform: translateX(0);
   }
 }
 
-@media (max-width: 45em) {
+@media (max-width: 464px) {
   .hero__container {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
