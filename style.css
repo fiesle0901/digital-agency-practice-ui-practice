@@ -47,7 +47,6 @@ h5 {
 
 html {
   font-family: "Roboto", sans-serif;
-  height: 2000px;
 }
 
 body {
@@ -381,9 +380,6 @@ section {
   .products__container .product__card {
     gap: 1rem;
     padding: 1.5rem 2rem;
-  }
-
-  .products__container .product__card {
   }
 }
 
