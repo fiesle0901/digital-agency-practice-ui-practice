@@ -374,6 +374,8 @@ section {
 }
 
 .service__header .col:nth-child(1) p {
+  display: flex;
+  gap: min(1vw, 2rem);
   margin-top: 1rem;
   font-weight: 600;
 }
@@ -410,6 +412,9 @@ section {
 }
 
 .servicesCards__container .service__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 2rem;
   border-radius: 1.7rem;
 }
@@ -429,6 +434,16 @@ section {
 .service__card:nth-child(3) {
   background: var(--color-pink);
   color: var(--color-dark-blue);
+}
+
+.service__card .service__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service__title img {
+  width: 40px;
+  height: 40px;
 }
 
 @media (max-width: 1540px) {
@@ -462,6 +477,32 @@ section {
   .products__container .product__card {
     gap: 1rem;
     padding: 1.5rem 2rem;
+  }
+  /**PRODUCTS CONTAINER**/
+  .servicesCards__container {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+
+  .service__container .service__header {
+    flex-direction: column-reverse;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .service__container .service__header .col:nth-child(2) h1 {
+    font-size: 3rem;
+  }
+
+  .service__container .service__header .col:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service__container .service__title h3 {
+    font-size: 2rem;
   }
 }
 
