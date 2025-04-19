@@ -354,7 +354,7 @@ section {
   }
 }
 
-/*----------SERVICES CONTAINER****************/
+/*----------SERVICES SECTION****************/
 .service__container {
   background: white;
   margin-inline: auto;
@@ -447,7 +447,7 @@ section {
   height: 40px;
 }
 
-/*----------CREATION CONTAINER****************/
+/*----------CREATION SECTION****************/
 .creation__container {
   background: white;
 }
@@ -510,6 +510,54 @@ section {
 
 .images__container div:nth-child(2) {
   background: #fe876f;
+}
+
+/*----------BANNER SECTION****************/
+.banner__container {
+  display: flex;
+  align-items: center;
+  background: var(--color-dark-blue);
+}
+
+.banner__container .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.banner__container .banner__text h1 {
+  text-align: center;
+  font-size: 10rem;
+  font-family: var(--ff-hero-heading);
+  color: white;
+  line-height: 0.84;
+}
+
+.banner__text h1 span {
+  color: var(--color-pink);
+}
+
+.banner__container button {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 5rem;
+  padding: 0.6rem 0.6rem 0.6rem 2rem;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-dark-blue);
+  margin-inline: auto;
+}
+
+.banner__container button img {
+  align-self: flex-end;
+  background: var(--color-dark-blue);
+  padding: 0.4rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 100vmin;
+  transform: rotate(-30deg);
 }
 
 @media (max-width: 1540px) {
@@ -649,6 +697,14 @@ section {
 
   .products__container .arrow img {
     width: 40px;
+  }
+
+  .creation__container .images__container {
+    padding-block: 2rem;
+    flex-wrap: wrap;
+  }
+  .creation__container .images__container div {
+    height: 300px;
   }
 }
 
