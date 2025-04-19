@@ -560,6 +560,54 @@ section {
   transform: rotate(-30deg);
 }
 
+/*----------BOARD SECTION****************/
+.board__container {
+  background: white;
+  color: var(--color-dark-blue);
+}
+
+.card__row:nth-child(2n) .card {
+  flex-direction: row-reverse;
+}
+
+.board__container .card__row img {
+  width: 250px;
+  height: 270px;
+  border-radius: 1rem;
+}
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card__row .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card__row .card .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card__row .card .name p {
+  font-weight: 900;
+  font-size: 1.7rem;
+}
+
+.card__row .card .name span {
+  font-style: italic;
+}
+
 @media (max-width: 1540px) {
   .row {
     justify-content: center;
